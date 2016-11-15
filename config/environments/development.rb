@@ -37,4 +37,10 @@ Rails.application.configure do
 
   # needed for devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # needed for paperclip
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :bucket => 'foodoof'
+}
 end
