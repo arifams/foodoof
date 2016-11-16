@@ -14,7 +14,10 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		@recipe = current_user.recipes.build(recipe_params)
+		@recipe = Recipe.new(recipe_params)
+		@recipe.user_id = current_user.id
+
+		puts @recipe.inspect
 
 		if @recipe.save
 			redirect_to @recipe, notice: "Succesfully created new recipe, chef"
