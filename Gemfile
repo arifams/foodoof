@@ -18,9 +18,12 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'devise', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
+gem 'acts_as_votable'
 
 
 group :development, :test do
+  gem 'dotenv', '~> 2.1', '>= 2.1.1'
+  gem 'sqlite3'
   gem 'byebug'
 end
 
