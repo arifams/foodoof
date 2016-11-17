@@ -19,6 +19,8 @@ gem 'devise', '~> 4.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
 gem 'acts_as_votable'
+gem 'puma'
+gem "rack-timeout"
 
 
 group :development, :test do
