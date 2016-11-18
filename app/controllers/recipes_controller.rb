@@ -27,7 +27,6 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
@@ -46,7 +45,11 @@ class RecipesController < ApplicationController
 	private
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
+		params.require(:recipe).permit(:title, 
+			:description, 
+			:image, 
+			ingredients_attributes: [:id, :name, :_destroy], 
+			directions_attributes: [:id, :step, :_destroy]).merge(user_id: current_user.id)
 	end
 
 	def find_recipe
