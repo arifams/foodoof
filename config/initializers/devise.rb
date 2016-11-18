@@ -136,7 +136,8 @@ Devise.setup do |config|
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [:email]
+  config.reset_password_keys = [ :username ]
+  config.confirmation_keys = [ :username ]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
@@ -274,4 +275,8 @@ Devise.setup do |config|
 
   # setting to the keep session scope irrelevant to logout.
   config.sign_out_all_scopes = false
+
+  # devise need for username/email login
+  config.authentication_keys = [ :login ]
+
 end
