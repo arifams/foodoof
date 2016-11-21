@@ -20,6 +20,9 @@
           <li>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
           </li>
+          <li>
+            <div class="round-image-50"><%= link_to image_tag(current_user.avatar.url(:thumb)), edit_user_registration_path %></div>
+          </li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
